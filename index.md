@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+# Using Deep Learning for Solving Sudoku
 
-You can use the [editor on GitHub](https://github.com/ProjectCS7641/CS7641-Group8-midterm.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+**Alex Powell, Adit Suvarna, Wenqi Shi, GianGiacomo Navarra, Sivapriya Vellaichamy**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### INTRODUCTION
 
-### Markdown
+With Machine learning outperforming humans in various games like Atari and Go, we were curious to explore how big a challenge is a logic-based number game Sudoku[1,2]. Logic-based games like Sudoku have been shown to help delay neurological disorders like Alzheimer’s and dementia. However, the game is easy to learn but hard to master.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### PROBLEM DEFINITION
 
-```markdown
-Syntax highlighted code block
+The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that we only use each number once in each row, column, and a grid of the puzzle. In solving Sudoku, players rely on both the temporal and position dependency between the board numbers [3]. Based on these facts, we decide to solve the Sudoku using different machine learning methods like Convolutional Neural Network (CNN) and a deep Q learning approach. The purpose of the proposal is to use Machine Learning to solve a Sudoku puzzle. The pipeline of the problem involves using an unsupervised algorithm to detect digits and further feeding the recognized digits to deep learning models, which would be trained to solve the puzzle.
 
-# Header 1
-## Header 2
-### Header 3
+![Flowchart of proposed method.](figure.PNG)
 
-- Bulleted
-- List
+### DATASET
+The dataset are provided by [1 million Sudoku games](https://www.kaggle.com/bryanpark/sudoku).
 
-1. Numbered
-2. List
+### METHODS
 
-**Bold** and _Italic_ and `Code` text
+We plan to present handwritten digit recognition results on the MNIST dataset using state-of-art unsupervised feature extraction and classification techniques.  On the one hand, we aim to implement unsupervised clustering algorithms like k-means, spectral clustering, DBSCAN, etc., use standard metrics to evaluate cluster performance, and visualize high-dimensional cluster centroids. On the other hand, we will also train different types of auto-encoders to classify MNIST digits. We will evaluate all the variants of the standard auto-encoder on the basis of the MNIST benchmark handwritten digit dataset and select the best classifier. 
 
-[Link](url) and ![Image](src)
-```
+Two deep learning techniques are considered: an AlexNetNetwork and a deep q learning method. For class labels, we plan to use an indicator function to denote whether or not the chosen label t is equal to class k. Then for learning both architectures utilizes the adaptive moments estimator  (Adam)  optimizer.  The  Adam optimizer involves using the first and second moments of the gradients.  The first moment involves the exponentially decaying average of previously squared gradients. The Adam optimizer then uses the combined averages of previous gradients to better update the parameters.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### POTENTIAL RESULTS AND DISCUSSION
 
-### Jekyll Themes
+We plan to analyze the neural networks' accuracy to compare their performance in completing the sudoku. We expect the accuracy to increase with the number of layers, but to avoid overfitting, we will have to tune the right number of layers to use. A metric we will utilize to evaluate a Deep Q-Learning network will be the number of nodes expanded during a best-first search.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ProjectCS7641/CS7641-Group8-midterm.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### REFERENCES
+[1] R. ”How to Build a Vision-Based Smart Sudoku,”
 
-### Support or Contact
+[2] Syed A T, Merugu S, Kumar V. Augmented Reality on Sudoku Puzzle Using Computer Vision and Deep Learning[M]//Advances in Cybernetics, Cognition, and Machine Learning for Communication Technologies. Springer, Singapore, 2020: 567-578.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[3] Bharti S K, Babu K S, Jena S K. Parsing-based sarcasm sentiment recognition in twitter data[C]//2015 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM). IEEE, 2015: 1373-1380.
