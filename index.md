@@ -10,9 +10,9 @@ With Machine learning outperforming humans in various games like Atari and Go, w
 
 The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that we only use each number once in each row, column, and a grid of the puzzle. In solving Sudoku, players rely on both the temporal and position dependency between the board numbers [3]. Based on these facts, we decide to solve the Sudoku using different machine learning methods like Convolutional Neural Network (CNN) and a deep Q learning approach. The purpose of the proposal is to use Machine Learning to solve a Sudoku puzzle. The pipeline of the problem involves using an unsupervised algorithm to detect digits and further feeding the recognized digits to deep learning models, which would be trained to solve the puzzle.
 
-![Flowchart of proposed method.](figure.PNG)
+![Flowchart of proposed method: A handwriting recogniser (Unsupervised) feeding into a sudoku solver (Supervised).](fig_overview.PNG)
 
-### DATASET
+### DATA COLLECTION
 The dataset are provided by [1 million Sudoku games](https://www.kaggle.com/bryanpark/sudoku).
 
 ### METHODS
@@ -21,7 +21,7 @@ We plan to present handwritten digit recognition results on the MNIST dataset us
 
 Two deep learning techniques are considered: an AlexNetNetwork and a deep q learning method. For class labels, we plan to use an indicator function to denote whether or not the chosen label t is equal to class k. Then for learning both architectures utilizes the adaptive moments estimator  (Adam)  optimizer.  The  Adam optimizer involves using the first and second moments of the gradients.  The first moment involves the exponentially decaying average of previously squared gradients. The Adam optimizer then uses the combined averages of previous gradients to better update the parameters.
 
-### POTENTIAL RESULTS AND DISCUSSION
+### RESULTS AND DISCUSSION
 
 We plan to analyze the neural networks' accuracy to compare their performance in completing the sudoku. We expect the accuracy to increase with the number of layers, but to avoid overfitting, we will have to tune the right number of layers to use. A metric we will utilize to evaluate a Deep Q-Learning network will be the number of nodes expanded during a best-first search.
 
