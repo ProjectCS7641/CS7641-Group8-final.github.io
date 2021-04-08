@@ -22,7 +22,8 @@ The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that w
 ### METHODS
 
 **Unsupervised:** In this part, we implement an auto-encoder as a classifier and train it on MNIST dataset. An autoencoder is a type of artificial neural network trained to learn efficient data codings by attempting to copy its input to its output. The aim of an autoencoder is to learn a representation (encoding) from the input by training the network to ignore signal noise. Internally, it has a hidden layer h that describes a code used to represent the input. The network can be viewed as two consistent parts: an encoder function h=f(x) and a decoder that produces a reconstruction r=g(h). In addition to the original auto-encoder-decoder structure, we add a classification model with softmax output layer to combine with the encoder for a full image classification pipeline.
-![alt-text-1](fig_us_1.PNG "Autoencoder as a Classifier using MNIST Dataset.")
+
+![alt-text-1](fig_us_1.png "Autoencoder as a Classifier using MNIST Dataset.")
 
 **Supervised:** The sudoku solver is essentially a multiclass classification task. We consider two different algorithms: 1) Multi-layer perceptron 2) Convolutional neural network. We expect our model to predict the most probable digit as we do in classification tasks. 
 
@@ -45,14 +46,16 @@ _Semi Accuracy 2:_ This metric identifies the percentage of blank cells from the
 
 ## Unsupervised Learning 
 The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.97. As we can see from the example below, the reconstruction results and prediction accuracy are pretty good. The autoencoder successfully encodes and decodes the latent space vectors with high quality. 
-![Example of recounstruction results of auto-encoder and predicted labels.](fig_us_2.PNG "Example of recounstruction results of auto-encoder and predicted labels.")
-![Plpts of training history and accuary of unsurpervised portion.](fig_us_3.PNG "Plpts of training history and accuary of unsurpervised portion.")
+
+![Example of recounstruction results of auto-encoder and predicted labels.](fig_us_2.png "Example of recounstruction results of auto-encoder and predicted labels.")
+
+![Plpts of training history and accuary of unsurpervised portion.](fig_us_3.png "Plpts of training history and accuary of unsurpervised portion.")
 
 ## Supervised Learning
 The primary metric used for both the multilayer perceptron and the convolutional neural network to evaluate the performance of the model is Semi Accuracy. In Fig.2 the loss function is represented for the MLP in the case of validation and training. 
 
 For the MLP we got a Semi accuracy around 80%, as shown in Fig.3. The blue line is indicative of the training while the red one is for validation. The results are then compared with a convolutional neural network  of 2 layer networks. We are planning to consider a deeper neural network with a higher number of layers  in order to optimize the best number without going overfitting.
-![alt-text-1](fig_s_1_1.PNG "The training loss for the Multi-layer Perceptron.")![alt-text-2](fig_s_1_2.PNG "The validation loss for the Multi-layer Perceptron.")
+![alt-text-1](fig_s_1_1.png "The training loss for the Multi-layer Perceptron.")![alt-text-2](fig_s_1_2.PNG "The validation loss for the Multi-layer Perceptron.")
 
 In Fig. 4 we represent the loss function calculated with the two layer convolutional neural network.  The Semi accuracy obtained with the CNN for training and validation is represented in Fig.5.
 
