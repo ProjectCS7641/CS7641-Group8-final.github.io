@@ -89,7 +89,7 @@ In Fig.7 we represent the loss function calculated with the two layer convolutio
     Fig 7. The loss function for training and and validation data for the two layer CNN.
 </center>
 
-Both the MLP and the two layer CNN  gives an accuracy around 83%  for the training and validation.  We then test the MLP in an unknown sample of sudokus, we got an accuracy of 82.9%.For the CNN we got an accuracy a little higher, 83% for testing. This gives us the possibility to exclude overfitting as both training and testing give a similar value in accuracy. We will do the same testing on CNNs with different hyperparameters, such as number of layers, and layer sizes.
+Both the MLP and the two layer CNN  gives an accuracy around 83%  for the training and validation. We then test the MLP in an unknown sample of sudokus, we got an accuracy of 82.9%. For the CNN we got an accuracy a little higher, 83% for testing. This gives us the possibility to exclude overfitting as both training and testing give a similar value in accuracy. We will do the same testing on CNNs with different hyperparameters, such as number of layers, and layer sizes.
 
 ![alt-text-1](fig_s_4.PNG)
 <center>
