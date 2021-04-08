@@ -64,10 +64,12 @@ The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.9
     Fig 4. Plots of training history and accuary of unsurpervised portion.
 </center>
 
+
 ## Supervised Learning
 The primary metric used for both the multilayer perceptron and the convolutional neural network to evaluate the performance of the model is Semi Accuracy. In Fig.5 the loss function is represented for the MLP in the case of validation and training. 
 
-![alt-text-1](fig_s_1_1.png "The training loss for the Multi-layer Perceptron.")![alt-text-2](fig_s_1_2.PNG "The validation loss for the Multi-layer Perceptron.")
+![alt-text-1](fig_s_1_1.png "The training loss for the Multi-layer Perceptron.")
+![alt-text-2](fig_s_1_2.PNG "The validation loss for the Multi-layer Perceptron.")
 <center>
     Fig 5. The training and validation loss for the Multi-layer Perceptron
 </center>
@@ -81,7 +83,8 @@ For the MLP we got a Semi accuracy around 80%, as shown in Fig.6. The blue line 
 
 In Fig.7 we represent the loss function calculated with the two layer convolutional neural network.  The Semi accuracy obtained with the CNN for training and validation is represented in Fig.8.
 
-![alt-text-1](fig_s_3_1.PNG )![alt-text-2](fig_s_3_2.PNG)
+![alt-text-1](fig_s_3_1.PNG )
+![alt-text-2](fig_s_3_2.PNG)
 <center>
     Fig 7. The loss function for training and and validation data for the two layer CNN.
 </center>
