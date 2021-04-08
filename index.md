@@ -50,7 +50,7 @@ _Semi Accuracy 2:_ This metric identifies the percentage of blank cells from the
 
 ### RESULTS AND DISCUSSION
 
-## Unsupervised Learning 
+#### Unsupervised Learning 
 The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.97. As we can see from the example below, the reconstruction results and prediction accuracy are pretty good. The autoencoder successfully encodes and decodes the latent space vectors with high quality. 
 
 ![](fig_us_2.png "Example of recounstruction results of auto-encoder and predicted labels.")
@@ -65,7 +65,7 @@ The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.9
 </center>
 
 
-## Supervised Learning
+#### Supervised Learning
 The primary metric used for both the multilayer perceptron and the convolutional neural network to evaluate the performance of the model is Semi Accuracy. In Fig.5 the loss function is represented for the MLP in the case of validation and training. 
 
 ![alt-text-1](fig_s_1_1.png "The training loss for the Multi-layer Perceptron.")
