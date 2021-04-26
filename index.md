@@ -23,7 +23,7 @@ The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that w
 
 ### METHODS
 
-**Unsupervised:** In this part, we implement an auto-encoder as a classifier and train it on MNIST dataset. An autoencoder is a type of artificial neural network trained to learn efficient data codings by attempting to copy its input to its output. The aim of an autoencoder is to learn a representation (encoding) from the input by training the network to ignore signal noise. Internally, it has a hidden layer h that describes a code used to represent the input. The network can be viewed as two consistent parts: an encoder function h=f(x) and a decoder that produces a reconstruction r=g(h). In addition to the original auto-encoder-decoder structure, we add a classification model with softmax output layer to combine with the encoder for a full image classification pipeline.
+**Unsupervised:** In this part, we implement an auto-encoder as a classifier and train it on MNIST dataset. An autoencoder is a type of artificial neural network trained to learn efficient data codings by attempting to copy its input to its output. The aim of an autoencoder is to learn a representation (encoding) from the input by training the network to ignore signal noise. To be specific, the input is a 28 by 28 image of a handwriting digit and the output is the reconstruction result with predicted label. Internally, it has a hidden layer h that describes a code used to represent the input. The network can be viewed as two consistent parts: an encoder function h=f(x) and a decoder that produces a reconstruction r=g(h). In addition to the original auto-encoder-decoder structure, we add a classification model with softmax output layer to combine with the encoder for a full image classification pipeline.
 
 ![alt-text-1](fig_us_1.png "Autoencoder as a Classifier using MNIST Dataset.")
 
@@ -35,6 +35,8 @@ The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that w
 *Multi Layer Perceptron:* In our Multilinear Perceptron we consider the Adadelta optimizer with a learning rate 0.1. We train the network for 10 epochs  with batch size 50 and  use a final softmax layer to generate probability values. The argmax over the soft probability was taken to choose the most likely probability for a given cell. 
 
 *Convolutional Neural Network*: For our Convolutional Neural Network the Adadelta optimizer has been used with learning rate 0.1. We train the network for 10 epochs  with batch size 50 and  use a final softmax layer to generate probability values. The argmax over the soft probability was taken to choose the most likely probability for a given cell. 
+
+*Bidirectional Recurrent Neural Network*: For the Recurrent Neural Network we took  one Long short term memory units (LSTM) with 500 hidden units. 
 
 **Evaluation metric:**
 The choice of evaluation metric is crucial as we would want to best identify the level of current performance so as to improve it in the future. We identify three different metrics that is applicable for the scenario.
