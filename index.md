@@ -143,6 +143,7 @@ For the neural networks, we also implemented a solve and batchSolve function tha
 As a reference to compare the accuracy numbers and how hard the problem is to solve using Machine Learning algorithms, we use two models other than Deep Learning to get the accuracy. 
 
 -- RandomForest Classifier
+
 -- Support Vector Classifier (RBF kernel)
 
 The problem formulation and data handling are all the same - we input 81 categorical variables each with 9 categorical levels and get 81 categorical variables each with 9 categorical levels. This is a Multi Output multiclass classification.
