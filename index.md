@@ -4,11 +4,12 @@
 
 ### INTRODUCTION
 
-With Machine learning outperforming humans in various games like Atari and Go, we were curious to explore how big a challenge is a logic-based number game Sudoku[1,2]. Logic-based games like Sudoku have been shown to help delay neurological disorders like Alzheimer’s and dementia. However, the game is easy to learn but hard to master.
+With Machine learning outperforming humans in a variety of games like Atari and Go, we were curious to explore how big a challenge is the logic based number game - Sudoku[1,2]. This is one of the games that are easy to learn but hard to master. Interestingly, logic based games like Sudoku have been shown to help delay neurological disorders like Alzheimer’s and dementia. 
+
 
 ### PROBLEM DEFINITION
 
-The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that we only use each number once in each row, column, and a grid of the puzzle. In solving Sudoku, players rely on both the temporal and position dependency between the board numbers [3]. Based on these facts, we decide to solve the Sudoku using different machine learning methods like Convolutional Neural Network (CNN) and a deep Q learning approach. The purpose of the proposal is to use Machine Learning to solve a Sudoku puzzle. The pipeline of the problem involves using an unsupervised algorithm to detect digits and further feeding the recognized digits to deep learning models, which would be trained to solve the puzzle.
+The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that we only use each number once in each row, column, and a grid of the puzzle. In solving Sudoku, players rely on both the temporal and position dependency between the board numbers [3]. Based on these facts, we decide to solve the Sudoku using different machine learning methods like Convolutional Neural Network (CNN) and a deep Q learning approach. The purpose of the proposal is to use Machine Learning to solve a Sudoku puzzle. The pipeline of the problem involves using an unsupervised algorithm to detect digits and further feeding the recognized digits to deep learning models, which would be trained to solve the puzzle. 
 
 ![](fig_overview.PNG "Flowchart of proposed method: A handwriting recogniser (Unsupervised) feeding into a sudoku solver (Supervised).")
 
@@ -19,7 +20,6 @@ The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that w
 **Unsupervised**: The MNIST database of handwritten digits has a training set of 60,000 examples, and a test set of 10,000 examples. The digits have been size-normalized and centered in a fixed-size image.
 
 **Supervised**: The Kaggle dataset “1 million sudoku games” is publically  available and provided by [1 million Sudoku games](https://www.kaggle.com/bryanpark/sudoku).The dataset contains two columns. The column quizzes contain the unsolved sudoku while the column solution has respective solved games. Each game is represented by a numpy array of 81 numbers. For the one-hot encoding, each of the numbers here is considered as a category because the value of the number itself does not hold any significance i.e. predicting a 4 as 5 is as bad as predicting it as 9. For this reason we consider each as a categorical input and we use one hot encoding before feeding it into the algorithm. This would mean that each of the 81 numbers is sent as a sequence of 9 numbers. 
-
 
 ### METHODS
 
@@ -32,7 +32,7 @@ The object of Sudoku is to fill out each puzzle with numbers 1-9 in a way that w
 
 **Supervised:** The sudoku solver is essentially a multiclass classification task. We consider two different algorithms: 1) Multi-layer perceptron 2) Convolutional neural network. We expect our model to predict the most probable digit as we do in classification tasks. 
 
-*Multi Layer Perceptron:* In our Multilinear Perceptron we consider the Adadelta optimizer with a learning rate 0.1. We train the network for 10 epochs  with batch size 50 and  use a final softmax layer to generate probability values. The argmax over the soft probability was taken to choose the most likely probability for a given cell. 
+*Multi Layer Perceptron:* In our Multilinear Perceptron we consider the Adadelta optimizer with a learning rate 0.1. We train the network for 10 epochs  with batch size 50 and  use a final softmax layer to generate probability values. The argmax over the soft probability was taken to choose the most likely probability for a given cell.  
 
 *Convolutional Neural Network*: For our Convolutional Neural Network the Adadelta optimizer has been used with learning rate 0.1. We train the network for 10 epochs  with batch size 50 and  use a final softmax layer to generate probability values. The argmax over the soft probability was taken to choose the most likely probability for a given cell. 
 
@@ -52,7 +52,7 @@ _Semi Accuracy 2:_ This metric identifies the percentage of blank cells from the
 ### RESULTS AND DISCUSSION
 
 #### Unsupervised Learning 
-The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.97. As we can see from the example below, the reconstruction results and prediction accuracy are pretty good. The autoencoder successfully encodes and decodes the latent space vectors with high quality. 
+The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.9670. As we can see from the example below, the reconstruction results and prediction accuracy are pretty good. The autoencoder successfully encodes and decodes the latent space vectors with high quality. 
 
 ![](fig_us_2.png "Example of recounstruction results of auto-encoder and predicted labels.")
 
@@ -67,7 +67,7 @@ The best performance result is obtained for epoch=100, loss=0.113, accuracy =0.9
 
 
 #### Supervised Learning
-The primary metric used for both the multilayer perceptron and the convolutional neural network to evaluate the performance of the model is Semi Accuracy. In Fig.5 the loss function is represented for the MLP in the case of validation and training. 
+The primary metric used for both the multilayer perceptron and the convolutional neural network to evaluate the performance of the model is Semi Accuracy. In Fig.5 the loss function is represented for the MLP in the case of validation and training. To be specific, Fig 5 plots loss reduction with epochs for MLP using validation and training data. As Fig 3 explains, we get a Semi accuracy of around 80%. Figure 2a) is indicative of training while Figure 2b) is for validation. We don't see a drastic gap between them after adequate hyper parameter tuning to avoid overfitting.   
 
 ![alt-text-1](fig_s_1_1.png "The training loss for the Multi-layer Perceptron.")
 ![alt-text-2](fig_s_1_2.PNG "The validation loss for the Multi-layer Perceptron.")
